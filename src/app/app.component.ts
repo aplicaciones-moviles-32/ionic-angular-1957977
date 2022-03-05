@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ionic-angular-1957977';
+
+
+  showif = "Si ves esto es porque 2+2=4"
+
+ 
+
 }
