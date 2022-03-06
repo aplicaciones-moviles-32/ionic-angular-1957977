@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ImagenesComponent } from './imagenes/imagenes.component';
 import { PerfilComponent } from './perfil/perfil.component';
@@ -12,13 +13,12 @@ const routes: Routes = [
     path: "imagenes",
     component: ImagenesComponent
   }
-
-
-
-];
+]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  declarations: [],
+  imports: [
+    CommonModule
+  ]
 })
-export class AppRoutingModule { }
+export class RoutesModule { }

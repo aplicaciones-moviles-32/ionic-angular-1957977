@@ -1,10 +1,31 @@
 
-
 <ion-app>
-    <ion-card *ngFor="let i of presidentes">
-        <ion-card-content>
-            <p>{{i.nombre}}</p>
-            <img src={{i.foto}} width="400px"/>
-        </ion-card-content>
-    </ion-card>
+    <ion-content>
+        <ion-header>Misstagram</ion-header> 
+        <ion-grid style="height: 100%">
+            <ion-row><ion-button routerLink="/" routerLinkActive="active">Volver a Inicio</ion-button> </ion-row>
+            <ion-row align="center" style="height: 100%">
+                <ion-col align="center">
+                    <ion-card *ngFor="let i of presidentes">
+                        <ion-card-content>
+                            <p>"{{i.nombre}}" published by : @mexicanpresidents</p>
+                            <img src={{i.foto}}/>
+                            <ion-grid>
+                                <ion-row>
+                                    <ion-col>
+                                        <ion-icon name="heart-dislike"></ion-icon>
+                                        <p>Dislike</p>
+                                    </ion-col>
+                                    <ion-col>
+                                        <ion-icon name="chatbubbles"></ion-icon>
+                                        <p>Comment</p>                                        
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+</ion-content>
 </ion-app>

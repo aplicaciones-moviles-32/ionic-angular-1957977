@@ -1,0 +1,45 @@
+<ion-app>
+    <ion-content>
+        <ion-header>Misstagram</ion-header> 
+        <ion-grid style="height: 100%">
+            <ion-row><ion-button routerLink="/" routerLinkActive="active">Volver a Inicio</ion-button> </ion-row>
+            <ion-row >
+                <ion-col><div class="userimg">
+                    <img [src]="user.image" class="userpic"/>
+                </div></ion-col>
+                <ion-col>
+                    <p><strong>{{user.numpost}}</strong></p>
+                    <p><strong># de Publicaciones</strong></p>
+                </ion-col>
+                <ion-col>
+                    <p><strong>{{user.followers}}</strong></p>
+                    <p><strong>Seguidores</strong></p>
+                </ion-col>
+                <ion-col>
+                    <p><strong>{{user.followings}}</strong></p>
+                    <p><strong>Seguidos</strong></p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col><a id="username"><strong>{{user.name}}</strong></a></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col><a><strong>{{user.desc}}</strong></a></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="1.5"><ion-button (click)="editbutton()">Cambiar descripción</ion-button></ion-col>
+                <ion-col *ngIf="editon">
+                    <ion-input [(ngModel)]="newdesc" class="userinput"></ion-input>
+                    <ion-button (click)="savedesc()">Guardar</ion-button>
+                    <ion-button (click)="canceldesc()">Cancelar</ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <app-publicaciones></app-publicaciones>
+            </ion-row>
+        </ion-grid>
+  
+</ion-content>
+</ion-app>
+
+
