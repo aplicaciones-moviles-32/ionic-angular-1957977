@@ -1,0 +1,22 @@
+<ion-content>
+    <ion-header>Misstagram</ion-header> 
+    <ion-card>
+        <ion-card-content>
+            <ion-card-subtitle>id: {{perdetail.id}}{{pubdetail.id}}</ion-card-subtitle>
+            <ion-img src={{perdetail.foto}}{{pubdetail.imagen}}></ion-img>
+            <ion-card-title>{{perdetail.nombre}}{{pubdetail.desc}}</ion-card-title>
+            <ion-grid>
+                <ion-row align="center">
+                    <ion-col align="center">
+                        <ion-icon name="heart-dislike"></ion-icon>
+                        <p>Dislike</p>
+                    </ion-col>
+                    <ion-col>
+                        <ion-icon name="chatbubbles"></ion-icon>
+                        <p>Comment</p>                                        
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

@@ -1,0 +1,18 @@
+ion-img{
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 600px !important;
+}
+
+ion-card{
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 50% !important;
+    margin: 20 !important;
+    height: max-content !important;
+    max-height: fit-content !important;
+    transform: translateX(50%);
+  }

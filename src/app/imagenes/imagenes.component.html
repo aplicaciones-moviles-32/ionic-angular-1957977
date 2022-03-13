@@ -3,16 +3,16 @@
     <ion-content>
         <ion-header>Misstagram</ion-header> 
         <ion-grid style="height: 100%">
-            <ion-row><ion-button routerLink="/" routerLinkActive="active">Volver a Inicio</ion-button> </ion-row>
-            <ion-row align="center" style="height: 100%">
-                <ion-col align="center">
+            <ion-row>
+                <ion-col>
                     <ion-card *ngFor="let i of presidentes">
                         <ion-card-content>
-                            <p>"{{i.nombre}}" published by : @mexicanpresidents</p>
-                            <img src={{i.foto}}/>
+                            <ion-card-subtitle [routerLink]="['/detallepub',i.id]" routerLinkActive="active">Published by : @mexicanpresidents</ion-card-subtitle>
+                            <img src={{i.foto}} [routerLink]="['/detallepub',i.id]" routerLinkActive="active"/>
+                            <ion-card-title [routerLink]="['/detallepub',i.id]" routerLinkActive="active">{{i.nombre}}</ion-card-title>
                             <ion-grid>
-                                <ion-row>
-                                    <ion-col>
+                                <ion-row align="center" style="height: 100%">
+                                    <ion-col align="center">
                                         <ion-icon name="heart-dislike"></ion-icon>
                                         <p>Dislike</p>
                                     </ion-col>

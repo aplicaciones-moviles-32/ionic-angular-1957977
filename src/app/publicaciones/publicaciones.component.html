@@ -1,8 +1,12 @@
 <ion-grid>
-    <ion-row >
-        <ion-col align="center" size="2.5" *ngFor="let i of publicaciones" class="tablepub">
+    <ion-row>
+        <ion-col align="center" size="2.5" *ngFor="let i of publicaciones" class="tablepub" [routerLink]="['/detallepub',i.id]" routerLinkActive="active">
             <div class="trim">
-                <img [src]="i.imagen" class="pub"/></div>
+                <img [src]="i.imagen" class="pub" /></div>
         </ion-col>  
     </ion-row>
 </ion-grid>
+
+
+
+
