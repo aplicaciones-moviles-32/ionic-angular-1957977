@@ -11,6 +11,9 @@ import { RoutesModule } from './routes.module';
 import { PublicacionesComponent } from './publicaciones/publicaciones.component';
 import { DetallepubComponent } from './detallepub/detallepub.component';
 import { RouterModule } from '@angular/router';
+import { environment} from 'src/environments/environment';
+import { AngularFireModule} from '@angular/fire/compat';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     IonicModule.forRoot(),
     RoutesModule,
-    RouterModule
+    RouterModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

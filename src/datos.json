@@ -1,0 +1,135 @@
+{   
+      "user": {
+        "name":"Cringepedia",
+        "desc":"Todo cringe, para personas cringe",
+        "imagen":"assets/images/5.png", 
+        "followers": "12345",
+        "followings": "12",
+        "numpost": "14",
+        "publicaciones": [
+            {
+              "id": "0x346536a45b0",
+              "desc": "La vida deberia ser eterna",
+              "imagen": "assets/images/1.jpg"
+            },
+            {
+              "id": "0x4456776a45b0",
+              "desc": "beepbeep",
+              "imagen": "assets/images/2.jpg"
+            },
+            {
+              "id": "0x43rg766a45b0",
+              "desc": "cringe",
+              "imagen": "assets/images/3.jpg"
+            },
+            {
+              "id": "0xh5j716a45b0",
+              "desc": "Only I can change my life. No one can do it for me",
+              "imagen": "assets/images/4.jpg"
+            },
+            {
+              "id": "0x09f016a45b0",
+              "desc": "Me gusta mi cabello",
+              "imagen": "assets/images/5.jpg"
+            },
+            {
+              "id": "0x44f5hfu3bb0",
+              "desc": "Manden PM uwu",
+              "imagen": "assets/images/6.jpg"
+            },
+            {
+              "id": "0x44f0589ghr0",
+              "desc": "MissinstaGOD // Instagramzzzzz",
+              "imagen": "assets/images/7.jpg"
+            },
+            {
+              "id": "0x29djfb5b5g0",
+              "desc": "La vida deberia ser eterna",
+              "imagen": "assets/images/1.jpg"
+            },
+            {
+              "id": "0x44f02845hv0",
+              "desc": "beepbeep",
+              "imagen": "assets/images/2.jpg"
+            },
+            {
+              "id": "0x44103rfjv5d0",
+              "desc": "cringe",
+              "imagen": "assets/images/3.jpg"
+            },
+            {
+              "id": "0x44wk294jfb0",
+              "desc": "Only I can change my life. No one can do it for me",
+              "imagen": "assets/images/4.jpg"
+            },
+            {
+              "id": "0x44f01f35dw0",
+              "desc": "Me gusta mi cabello",
+              "imagen": "assets/images/5.jpg"
+            },
+            {
+              "id": "0x44f05869hgn",
+              "desc": "Manden PM uwu",
+              "imagen": "assets/images/6.jpg"
+            },
+            {
+              "id": "0x44f29djnmmr0",
+              "desc": "MissinstaGOD // Instagramzzzzz",
+              "imagen": "assets/images/7.jpg"
+            }
+          ]
+      },
+      "presidentes": [
+        {
+          "desc": "Porfirio Diaz",
+          "id":"863586-zqkru",
+          "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.elsiglodetorreon.com.mx%2Fm%2Fi%2F2020%2F09%2F1346814.jpeg&f=1&nofb=1"
+        },
+        {
+          "desc": "Benito Juarez",
+          "id":"344648-qniiu",
+          "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.thefamouspeople.com%2Fprofiles%2Fimages%2Fbenito-juarez-4.jpg&f=1&nofb=1"
+        },
+        {
+          "desc": "Felipe Calderon",
+          "id":"346391-mzfca",
+          "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.elsiglodetorreon.com.mx%2Fm%2Fi%2F2018%2F11%2F1117039.jpeg&f=1&nofb=1"
+        },
+        {
+          "desc": "AMLO",
+          "id":"022325-zdvpi",
+          "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp4208562.jpg&f=1&nofb=1"
+        },
+        {
+          "desc": "Enrique Peña Nieto",
+          "id":"975506-herbe",
+          "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.biography.com%2F.image%2Ft_share%2FMTMzMTE4ODA5NjE0NTkyNjQz%2Fenrique-pena-nieto_wikicommonsjpg.jpg&f=1&nofb=1"
+        },
+        {
+          "desc": "Porfirio Diaz",
+          "id":"584918-nutwz",
+          "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.elsiglodetorreon.com.mx%2Fm%2Fi%2F2020%2F09%2F1346814.jpeg&f=1&nofb=1"
+        },
+        {
+          "desc": "Benito Juarez",
+          "id":"752405-cbzep",
+          "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.thefamouspeople.com%2Fprofiles%2Fimages%2Fbenito-juarez-4.jpg&f=1&nofb=1"
+        },
+        {
+          "desc": "Felipe Calderon",
+          "id":"763807-xbsxz",
+          "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.elsiglodetorreon.com.mx%2Fm%2Fi%2F2018%2F11%2F1117039.jpeg&f=1&nofb=1"
+        },
+        {
+          "desc": "AMLO",
+          "id":"984260-cbsfd",
+          "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp4208562.jpg&f=1&nofb=1"
+        },
+        {
+          "desc": "Enrique Peña Nieto",
+          "id":"241286-cxvqh",
+          "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.biography.com%2F.image%2Ft_share%2FMTMzMTE4ODA5NjE0NTkyNjQz%2Fenrique-pena-nieto_wikicommonsjpg.jpg&f=1&nofb=1"
+        }
+      ]
+
+}

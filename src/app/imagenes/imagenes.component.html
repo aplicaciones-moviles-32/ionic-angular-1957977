@@ -8,8 +8,8 @@
                     <ion-card *ngFor="let i of presidentes">
                         <ion-card-content>
                             <ion-card-subtitle [routerLink]="['/detallepub',i.id]" routerLinkActive="active">Published by : @mexicanpresidents</ion-card-subtitle>
-                            <img src={{i.foto}} [routerLink]="['/detallepub',i.id]" routerLinkActive="active"/>
-                            <ion-card-title [routerLink]="['/detallepub',i.id]" routerLinkActive="active">{{i.nombre}}</ion-card-title>
+                            <img src={{i.imagen}} [routerLink]="['/detallepub',i.id]" routerLinkActive="active"/>
+                            <ion-card-title [routerLink]="['/detallepub',i.id]" routerLinkActive="active">{{i.desc}}</ion-card-title>
                             <ion-grid>
                                 <ion-row align="center" style="height: 100%">
                                     <ion-col align="center">

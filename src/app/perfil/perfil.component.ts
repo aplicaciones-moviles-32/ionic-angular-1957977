@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
+import { DbservService } from '../dbserv.service';
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +9,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor() {   }
+  constructor(private http:HttpClient, private db:DbservService) {   }
 
   ngOnInit(): void {
+    this.db.getprofile().subscribe(res => {this.user=res;});
   }
 
   @Input() newdesc: string = ""; 
@@ -17,15 +20,7 @@ export class PerfilComponent implements OnInit {
 
 
 ;
-  user = 
-    {
-      "name":"Cringepedia",
-      "desc":"Todo cringe, para personas cringe",
-      "image":"assets/images/5.png", 
-      "followers": "12345",
-      "followings": "12",
-      "numpost": "14"
-    };
+  user: any =[];
 
     editbutton(): void {
         this.editon = true;
