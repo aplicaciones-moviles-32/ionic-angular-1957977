@@ -130,6 +130,38 @@
           "id":"241286-cxvqh",
           "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.biography.com%2F.image%2Ft_share%2FMTMzMTE4ODA5NjE0NTkyNjQz%2Fenrique-pena-nieto_wikicommonsjpg.jpg&f=1&nofb=1"
         }
-      ]
+      ],
 
+      "historias": [
+        {
+          "user": "@cringepedia",
+          "imagen": "assets/images/5.png",
+          "id":"999260-aaafd",
+          "historia": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FqJyg7B4Xs4I%2Fmaxresdefault.jpg&f=1&nofb=1"
+        },
+        {
+          "user": "@cringepedia",
+          "imagen": "assets/images/5.png",
+          "id":"7578260-rusfd",
+          "historia": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FqJyg7B4Xs4I%2Fmaxresdefault.jpg&f=1&nofb=1"
+        },
+        {
+          "user": "@cringepedia",
+          "imagen": "assets/images/5.png",
+          "id":"876260-ykhfd",
+          "historia": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FqJyg7B4Xs4I%2Fmaxresdefault.jpg&f=1&nofb=1"
+        },
+        {
+          "user": "@cringepedia",
+          "imagen": "assets/images/5.png",
+          "id":"596074-hiirfd",
+          "historia": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FqJyg7B4Xs4I%2Fmaxresdefault.jpg&f=1&nofb=1"
+        },
+        {
+          "user": "@cringepedia",
+          "imagen": "assets/images/5.png",
+          "id":"294060-ulhk6m",
+          "historia": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FqJyg7B4Xs4I%2Fmaxresdefault.jpg&f=1&nofb=1"
+        }
+      ]
 }

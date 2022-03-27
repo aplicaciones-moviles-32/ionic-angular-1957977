@@ -21,6 +21,10 @@ export class DbservService {
     return this.http.get('https://misstagram-a8c5e-default-rtdb.firebaseio.com/user/publicaciones.json');
   }
 
+  gethistoria(): any{
+    return this.http.get('https://misstagram-a8c5e-default-rtdb.firebaseio.com/historias/.json');
+  }
+
   getpubdetail(identifier: string): any{
     return this.http.get('https://misstagram-a8c5e-default-rtdb.firebaseio.com/user/publicaciones/'+identifier+'.json');
   }
@@ -28,4 +32,13 @@ export class DbservService {
   getfeeddetail(identifier: string): any{
     return this.http.get('https://misstagram-a8c5e-default-rtdb.firebaseio.com/presidentes/'+identifier+'.json');
   }
+
+  gethistoriadetail(identifier: string): any{
+    return this.http.get('https://misstagram-a8c5e-default-rtdb.firebaseio.com/historias/'+identifier+'.json');
+  }
+
+  postpub(newpub:any){
+    return this.http.post('https://misstagram-a8c5e-default-rtdb.firebaseio.com/user/publicaciones.json', newpub);
+  }
+
 }

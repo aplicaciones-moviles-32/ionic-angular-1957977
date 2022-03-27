@@ -1,13 +1,35 @@
 
 <ion-app>
     <ion-content>
-        <ion-header>Misstagram</ion-header> 
+            <ion-item>
+                <ion-avatar slot="end">
+                  <img src="assets/images/5.png" />
+                </ion-avatar>
+                <ion-label>Misstagram</ion-label>
+              </ion-item>
         <ion-grid style="height: 100%">
+            <ion-row><app-historiacontainer></app-historiacontainer></ion-row>
             <ion-row>
                 <ion-col>
-                    <ion-card *ngFor="let i of presidentes">
+                    <ion-card *ngFor="let i of presidentes"> 
                         <ion-card-content>
-                            <ion-card-subtitle [routerLink]="['/detallepub',i.id]" routerLinkActive="active">Published by : @mexicanpresidents</ion-card-subtitle>
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col [routerLink]="['/detallepub',i.id]" routerLinkActive="active" size="10">
+                                            <ion-item>
+                                            <ion-avatar slot="start" style="width:30% !important;height : 30% !important;max-width: 40px !important;max-height: 40px !important;">
+                                                <img src="assets/images/5.png" />
+                                              </ion-avatar>
+                                              <ion-label>@mexicanpresidents</ion-label>
+                                              <p>ID: {{i.id}}</p>
+                                            </ion-item>
+                                        </ion-col>
+                                        <ion-col>
+                                            <ion-button fill="translucent" id="trigger_{{i.id}}" class="trigger"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></ion-button>
+                                            <ion-popover trigger="trigger_{{i.id}}"><ng-template><app-popovermenu></app-popovermenu></ng-template></ion-popover>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
                             <img src={{i.imagen}} [routerLink]="['/detallepub',i.id]" routerLinkActive="active"/>
                             <ion-card-title [routerLink]="['/detallepub',i.id]" routerLinkActive="active">{{i.desc}}</ion-card-title>
                             <ion-grid>

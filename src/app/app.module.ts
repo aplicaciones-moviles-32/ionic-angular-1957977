@@ -14,6 +14,11 @@ import { RouterModule } from '@angular/router';
 import { environment} from 'src/environments/environment';
 import { AngularFireModule} from '@angular/fire/compat';
 import { HttpClientModule } from '@angular/common/http';
+import { PopovermenuComponent } from './popovermenu/popovermenu.component';
+import { HistoriasComponent } from './historias/historias.component';
+import { HistoriacontainerComponent } from './historiacontainer/historiacontainer.component';
+import { NuevoComponent } from './nuevo/nuevo.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +27,11 @@ import { HttpClientModule } from '@angular/common/http';
     PerfilComponent,
     PublicacionesComponent,
     TabsComponent,
-    DetallepubComponent
+    DetallepubComponent,
+    PopovermenuComponent,
+    HistoriasComponent,
+    HistoriacontainerComponent,
+    NuevoComponent
   ],
   imports: [
     BrowserModule,

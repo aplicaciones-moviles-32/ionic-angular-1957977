@@ -1,0 +1,20 @@
+<ion-grid>
+    <ion-row class="historias">
+        <ion-col size="1" *ngFor="let i of historias">
+            <ion-avatar>
+                <ion-img src={{i.imagen}} id="storytrig_{{i.id}}" id="usrpic"></ion-img>
+                <ion-modal trigger="storytrig_{{i.id}}">
+                    <ng-template>
+                        <app-historias></app-historias>
+                    </ng-template>
+                </ion-modal>
+            </ion-avatar>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+
+
+
+
+
+

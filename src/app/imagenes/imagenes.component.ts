@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { DbservService } from '../dbserv.service';
+import { PopoverController } from '@ionic/angular';
+import { PopovermenuComponent } from '../popovermenu/popovermenu.component';
 
 @Component({
   selector: 'app-imagenes',
@@ -9,7 +11,7 @@ import { DbservService } from '../dbserv.service';
 })
 export class ImagenesComponent implements OnInit {
 
-  constructor(private http: HttpClient, private db: DbservService) { }
+  constructor(private http: HttpClient, private db: DbservService, private popover: PopoverController) { }
   
 
 
@@ -17,6 +19,8 @@ export class ImagenesComponent implements OnInit {
   ngOnInit(): void {
     this.db.getfeed().subscribe(res => {this.presidentes=res;});
   }
+
+
 
 
 

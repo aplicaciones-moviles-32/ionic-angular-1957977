@@ -1,10 +1,17 @@
 <ion-app>
     <ion-content>
-        <ion-header>Misstagram</ion-header> 
+        <ion-item>
+            <ion-avatar slot="end">
+              <img src="assets/images/5.png" />
+            </ion-avatar>
+            <ion-label>Misstagram</ion-label>
+          </ion-item>
         <ion-grid style="height: 100%">
             <ion-row >
                 <ion-col><div class="userimg">
-                    <img [src]="user.imagen" class="userpic"/>
+                    <ion-avatar style="width:100% !important;height : 100% !important;max-width: 100px !important;max-height: 100px !important;">
+                    <img [src]="user.imagen"/>
+                    </ion-avatar>
                 </div></ion-col>
                 <ion-col>
                     <p><strong>{{user.numpost}}</strong></p>

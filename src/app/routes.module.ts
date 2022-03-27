@@ -4,6 +4,7 @@ import { Router, RouterModule, Routes } from '@angular/router';
 import { ImagenesComponent } from './imagenes/imagenes.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { DetallepubComponent } from './detallepub/detallepub.component';
+import { NuevoComponent } from './nuevo/nuevo.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'detallepub/:id',
     component: DetallepubComponent
+  },
+  {
+    path: 'nuevo/',
+    component: NuevoComponent
   }
 ]
 
