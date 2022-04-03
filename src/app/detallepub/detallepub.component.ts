@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DbservService } from '../dbserv.service';
 import { PopoverController } from '@ionic/angular';
@@ -15,6 +15,7 @@ import { PopovermenuComponent } from '../popovermenu/popovermenu.component';
 export class DetallepubComponent implements OnInit {
   aux1: string = '';
   aux2: string = '';
+  
 
   constructor(private ruta: ActivatedRoute, private http:HttpClient, private db:DbservService,private popover: PopoverController) { }
 

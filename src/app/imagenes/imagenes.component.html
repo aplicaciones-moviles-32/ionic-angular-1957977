@@ -26,7 +26,7 @@
                                         </ion-col>
                                         <ion-col>
                                             <ion-button fill="translucent" id="trigger_{{i.id}}" class="trigger"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></ion-button>
-                                            <ion-popover trigger="trigger_{{i.id}}"><ng-template><app-popovermenu></app-popovermenu></ng-template></ion-popover>
+                                            <ion-popover trigger="trigger_{{i.id}}"><ng-template><app-popovermenu [id_pub_edit]="'-1'"></app-popovermenu></ng-template></ion-popover>
                                         </ion-col>
                                     </ion-row>
                                 </ion-grid>

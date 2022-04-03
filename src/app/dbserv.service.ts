@@ -41,4 +41,12 @@ export class DbservService {
     return this.http.post('https://misstagram-a8c5e-default-rtdb.firebaseio.com/user/publicaciones.json', newpub);
   }
 
+  deletepub(id: string){
+    return this.http.delete('https://misstagram-a8c5e-default-rtdb.firebaseio.com/user/publicaciones/'+id+'.json');
+  }
+
+  putpub(id:string, newpub: any){
+    return this.http.put('https://misstagram-a8c5e-default-rtdb.firebaseio.com/user/publicaciones/'+id+'.json',newpub);
+
+  }
 }

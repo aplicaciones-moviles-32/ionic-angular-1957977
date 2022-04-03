@@ -20,12 +20,6 @@ export class ImagenesComponent implements OnInit {
     this.db.getfeed().subscribe(res => {this.presidentes=res;});
   }
 
-
-
-
-
-
-
   presidentes: any =[];
   
 }
