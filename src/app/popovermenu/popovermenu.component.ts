@@ -1,29 +1,34 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { DbservService } from '../dbserv.service';
+import { getDatabase, onValue, ref, remove, set, update } from 'firebase/database';
+
 
 @Component({
   selector: 'app-popovermenu',
   templateUrl: './popovermenu.component.html',
   styleUrls: ['./popovermenu.component.css'],
-  template:'<app-popovermenu [id_pub_edit]="id_pub_edit"></app-popovermenu>'
+  template:'<app-popovermenu [not_modify]="not_modify" [id_modify]="id_modify"></app-popovermenu>'
 })
 export class PopovermenuComponent implements OnInit {
 
-  constructor(private http:HttpClient, private db: DbservService) { }
+  constructor() { }
 
   ngOnInit(): void {
+    console.log(this.not_modify);
+    console.log(this.id_modify);
   }
 
   @Input() 
-  id_pub_edit: string= '';
+  not_modify: any= {};
+  @Input()
+  id_modify: any = {};
   @Input() newdesc: string= '';
-  editando: boolean = false;
-  newpub: any = {};
-  
+  editando: boolean = false;  
+  pic: any = {}; //eliminar pronto
 
   eliminar(id: string){
-    this.db.deletepub(id).subscribe(aux => {console.log(id);window.history.back();});
+    let database = getDatabase();
+    remove(ref(database, 'user/publicaciones/'+id));
+    window.history.back();window.location.reload();
   }
 
   editar(){
@@ -31,11 +36,20 @@ export class PopovermenuComponent implements OnInit {
   }
 
   guardar(){
-    this.db.getpubdetail(this.id_pub_edit).subscribe(arr => {
-      this.newpub=arr;
-      this.newpub['desc']=this.newdesc;
-      this.db.putpub(this.id_pub_edit,this.newpub).subscribe(aux =>{window.location.reload();});
-    });
+    let db = getDatabase();
+    //eliminar pronto:
+    let getpic = ref(db, 'user/publicaciones/'+this.id_modify);
+    onValue(getpic, (aux) =>{
+      this.pic = aux.val();
+      this.pic = this.pic['imagen'];
+    })
+    //
+    update(ref(db, 'user/publicaciones/'+this.id_modify),{
+      desc: this.newdesc,
+      imagen: this.pic,
+      id: this.id_modify
+      });
+    window.location.reload();
     this.editando=false;
   }
 }

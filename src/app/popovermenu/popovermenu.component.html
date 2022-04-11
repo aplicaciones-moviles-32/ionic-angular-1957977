@@ -2,10 +2,10 @@
     <ion-item>
         <ion-label color="primary">Guardar en el teléfono</ion-label>
     </ion-item>
-    <ion-item *ngIf="id_pub_edit!='-1'" (click)="editar()">
+    <ion-item *ngIf="not_modify!='true'" (click)="editar()">
         <ion-label color="primary">Modificar Publicacion</ion-label>
     </ion-item>
-    <ion-item *ngIf="id_pub_edit!='-1'" (click)="eliminar(id_pub_edit)">
+    <ion-item *ngIf="not_modify!='true'" (click)="eliminar(id_modify)">
         <ion-label color="danger">Eliminar Publicacion</ion-label>
     </ion-item>
     <ion-item *ngIf="editando">

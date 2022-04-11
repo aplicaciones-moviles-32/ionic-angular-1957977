@@ -11,11 +11,12 @@
             <ion-row><app-historiacontainer></app-historiacontainer></ion-row>
             <ion-row>
                 <ion-col>
-                    <ion-card *ngFor="let i of presidentes"> 
+                    <div *ngFor="let i of presidentes">
+                    <ion-card *ngIf="card_validation(i)"> 
                         <ion-card-content>
                                 <ion-grid>
                                     <ion-row>
-                                        <ion-col [routerLink]="['/detallepub',i.id]" routerLinkActive="active" size="10">
+                                        <ion-col [routerLink]="['/detallepub',true,i.id]" routerLinkActive="active" size="10">
                                             <ion-item>
                                             <ion-avatar slot="start" style="width:30% !important;height : 30% !important;max-width: 40px !important;max-height: 40px !important;">
                                                 <img src="assets/images/5.png" />
@@ -26,12 +27,12 @@
                                         </ion-col>
                                         <ion-col>
                                             <ion-button fill="translucent" id="trigger_{{i.id}}" class="trigger"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></ion-button>
-                                            <ion-popover trigger="trigger_{{i.id}}"><ng-template><app-popovermenu [id_pub_edit]="'-1'"></app-popovermenu></ng-template></ion-popover>
+                                            <ion-popover trigger="trigger_{{i.id}}"><ng-template><app-popovermenu not_modify="true" id_modify="-1"></app-popovermenu></ng-template></ion-popover>
                                         </ion-col>
                                     </ion-row>
                                 </ion-grid>
-                            <img src={{i.imagen}} [routerLink]="['/detallepub',i.id]" routerLinkActive="active"/>
-                            <ion-card-title [routerLink]="['/detallepub',i.id]" routerLinkActive="active">{{i.desc}}</ion-card-title>
+                            <img src={{i.imagen}} [routerLink]="['/detallepub',true,i.id]" routerLinkActive="active"/>
+                            <ion-card-title [routerLink]="['/detallepub',true,i.id]" routerLinkActive="active">{{i.desc}}</ion-card-title>
                             <ion-grid>
                                 <ion-row align="center" style="height: 100%">
                                     <ion-col align="center">
@@ -46,6 +47,7 @@
                             </ion-grid>
                         </ion-card-content>
                     </ion-card>
+                    </div>
                 </ion-col>
             </ion-row>
         </ion-grid>

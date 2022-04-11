@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DbservService } from '../dbserv.service';
 import { PopoverController } from '@ionic/angular';
 import { PopovermenuComponent } from '../popovermenu/popovermenu.component';
+import { getDatabase, onValue, ref, remove, set, update } from 'firebase/database';
+
 
 @Component({
   selector: 'app-detallepub',
@@ -13,33 +13,32 @@ import { PopovermenuComponent } from '../popovermenu/popovermenu.component';
 
 
 export class DetallepubComponent implements OnInit {
-  aux1: string = '';
-  aux2: string = '';
   
 
-  constructor(private ruta: ActivatedRoute, private http:HttpClient, private db:DbservService,private popover: PopoverController) { }
+  constructor(private ruta: ActivatedRoute,private popover: PopoverController) { }
 
   ngOnInit(): void{
+    this.db = getDatabase();
 
-    this.db.getfeed().subscribe(res => {
-      this.presidentes=res;
-      this.aux2=this.presidentes.findIndex(x => x.id == this.idruta);
-      this.db.getfeeddetail(this.aux2).subscribe(res => {this.pubdetail=res;})
-    });
+      //El condicional if siguiente sirve para básicamente evitar confusiones ya que todos los elementos de todos los arreglos tienen el mismo id de firebase
+      if(this.from_pub_ajenas == 'true'){ //Básicamente, si hacemos click desde las publicaciones ajenas, entonces nos traemos del arreglo de presidentes,
+        this.auxdetail = ref(this.db, 'presidentes/'+this.idruta);
+      }else {
+        this.auxdetail = ref(this.db, 'user/publicaciones/'+this.idruta); //Pero si hacemos click desde las publicaciones propias, entonces nos la traemos de publicaciones
+      }
 
-    this.db.getpub().subscribe(res => {
-      this.publicaciones=res; 
-      this.aux1=this.publicaciones.findIndex(y => y.id == this.idruta);
-      this.db.getpubdetail(this.aux1).subscribe(res => {this.pubdetail=res;})
-    });
+      onValue(this.auxdetail, (aux) => {
+        this.pubdetail = aux.val();
+      }); 
+
   }
 
-
-  presidentes: any =[];
-  publicaciones: any =[];
-
+  auxdetail: any = {};
+  db: any = {};
   pubdetail: any = {}
   idruta: string = this.ruta.snapshot.params['id'];
+  from_pub_ajenas: string = this.ruta.snapshot.params['bool'];  //Booleano que nos va a decir desde donde hacemos click para ver pubdetail, si es desde las publicaciones ajenas, entonces será true.
+
 
   
 }

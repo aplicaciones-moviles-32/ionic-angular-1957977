@@ -15,7 +15,7 @@ const routes: Routes = [
     component: ImagenesComponent
   },
   {
-    path: 'detallepub/:id',
+    path: 'detallepub/:bool/:id',
     component: DetallepubComponent
   },
   {
