@@ -7,27 +7,34 @@
             </ion-avatar>
             <ion-label>Misstagram</ion-label>
           </ion-item>
-
-        <form #form="ngForm" (ngSubmit)="onSubmit(form)" ngNativeValidate>
-          <ion-label class="label">Nueva Publicación</ion-label>
-          <ion-grid>
-            <ion-row>
-              <ion-col>Descripción de tu publicación</ion-col>
-            </ion-row>
-            <ion-row>
-            <ion-input placeholder="Ej: Soy muy feo, verdad? :((((( Denmen atencionmn" [(ngModel)]="newdesc" name="desc" required></ion-input>
-            </ion-row>
-            <ion-row>
-              <ion-col>Sube aquí tu foto:
-              <ion-button>Subir Foto</ion-button>
-              <img class="temp_pic" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F35%2F6d%2F29%2F356d29379ba4bae3843bcd124de3fe9f.jpg&f=1&nofb=1" />
-              <ion-label>En Misstagram nos estremecemos por tí</ion-label>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-          <ion-button type="submit">Subir Publicación</ion-button>
-        </form>
-
+          <ion-card>
+            <ion-card-header>Nueva Publicacion</ion-card-header>
+            <ion-card-content>
+              <form #form="ngForm" (ngSubmit)="onSubmit(form)" ngNativeValidate>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>Descripción de tu publicación</ion-col>
+                  </ion-row>
+                  <ion-row>
+                  <ion-input placeholder="Ej: Soy muy feo, verdad? :((((( Denmen atencionmn" [(ngModel)]="newdesc" name="desc" required></ion-input>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>Sube aquí tu foto:
+                    <ion-button (click)="Tomar_Foto()">Subir Foto</ion-button>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row *ngFor="let i of fotos.foto; index as position">
+                    <ion-img [src]="i.webviewPath" class="temp_pic"></ion-img>
+                  </ion-row>
+                  <ion-row>
+                    <ion-label>En Misstagram nos estremecemos por tí</ion-label>
+                  </ion-row>
+                </ion-grid>
+                <ion-button type="submit">Subir Publicación</ion-button>
+              </form>      
+            </ion-card-content>
+          </ion-card>
+        
     </ion-content>
 </ion-app>
 

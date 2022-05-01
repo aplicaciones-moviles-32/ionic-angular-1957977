@@ -1,6 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Database, set, ref, update, getDatabase } from 'firebase/database';
+import { PhotoServicioService } from '../photo-servicio.service';
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+import { Directory, WriteFileResult } from '@capacitor/filesystem';
+
 
 @Component({
   selector: 'app-nuevo',
@@ -9,12 +13,18 @@ import { Database, set, ref, update, getDatabase } from 'firebase/database';
 })
 export class NuevoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public fotos: PhotoServicioService) { }
 
   ngOnInit(): void {
   }
 
 
+  Tomar_Foto(){
+    this.fotos.tomar_foto();
+    defineCustomElements(window);
+  }
+
+  
   newid: string = '';
   
   onSubmit(form: NgForm) {
@@ -22,7 +32,7 @@ export class NuevoComponent implements OnInit {
     this.newid = this.makeid(8); //Creando un nuevo id de publicación automático de 8 caracteres
     set(ref(db, '/user/publicaciones/'+this.newid),{ //Creando una nueva publicación 
       desc: this.newdesc,
-      imagen: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F35%2F6d%2F29%2F356d29379ba4bae3843bcd124de3fe9f.jpg&f=1&nofb=1",
+      imagen: this.fotos.foto[0].webviewPath,
       id: this.newid
     });
     this.clear();

@@ -20,7 +20,7 @@ import {provideDatabase, getDatabase} from '@angular/fire/database';
 import { initializeApp } from 'firebase/app';
 import { provideFirebaseApp } from '@angular/fire/app';
 import { HttpClientModule} from '@angular/common/http';
-
+import { PhotoServicioService } from './photo-servicio.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,7 @@ import { HttpClientModule} from '@angular/common/http';
     RouterModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideDatabase(()=>getDatabase())],
-  providers: [],
+  providers: [PhotoServicioService],
   bootstrap: [AppComponent],
   exports:[RoutesModule]
 })

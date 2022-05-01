@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NuevoComponent } from './nuevo.component';
+import { PhotoServicioService } from '../photo-servicio.service';
+
 
 describe('NuevoComponent', () => {
   let component: NuevoComponent;
