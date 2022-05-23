@@ -12,13 +12,19 @@ import { PublicacionesComponent } from './publicaciones/publicaciones.component'
 import { DetallepubComponent } from './detallepub/detallepub.component';
 import { RouterModule } from '@angular/router';
 import { environment} from 'src/environments/environment';
-import { AngularFireModule} from '@angular/fire/compat';
-import { HttpClientModule } from '@angular/common/http';
 import { PopovermenuComponent } from './popovermenu/popovermenu.component';
 import { HistoriasComponent } from './historias/historias.component';
 import { HistoriacontainerComponent } from './historiacontainer/historiacontainer.component';
 import { NuevoComponent } from './nuevo/nuevo.component';
+import {provideDatabase, getDatabase} from '@angular/fire/database';
+import { initializeApp } from 'firebase/app';
+import { provideFirebaseApp } from '@angular/fire/app';
+import { HttpClientModule} from '@angular/common/http';
+import { PhotoServicioService } from './photo-servicio.service';
+import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 
+
+initializeApp(environment.firebaseConfig);
 
 @NgModule({
   declarations: [
@@ -31,7 +37,8 @@ import { NuevoComponent } from './nuevo/nuevo.component';
     PopovermenuComponent,
     HistoriasComponent,
     HistoriacontainerComponent,
-    NuevoComponent
+    NuevoComponent,
+    InicioSesionComponent
   ],
   imports: [
     BrowserModule,
@@ -39,11 +46,10 @@ import { NuevoComponent } from './nuevo/nuevo.component';
     AppRoutingModule,
     IonicModule.forRoot(),
     RoutesModule,
+    HttpClientModule,
     RouterModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    HttpClientModule
-  ],
-  providers: [],
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),provideDatabase(()=>getDatabase())],
+  providers: [PhotoServicioService],
   bootstrap: [AppComponent],
   exports:[RoutesModule]
 })

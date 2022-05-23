@@ -1,0 +1,6 @@
+{
+	"appId": "com.misstagram.app",
+	"appName": "Misstagram",
+	"webDir": "www",
+	"bundledWebRuntime": true
+}

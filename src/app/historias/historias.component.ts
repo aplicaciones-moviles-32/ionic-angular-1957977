@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import { DbservService } from '../dbserv.service';
+import { getDatabase, onValue, ref, remove, set, update } from 'firebase/database';
+
 
 @Component({
   selector: 'app-historias',
@@ -9,7 +9,7 @@ import { DbservService } from '../dbserv.service';
 })
 export class HistoriasComponent implements OnInit {
 
-  constructor(private http: HttpClient, private db: DbservService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

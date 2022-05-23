@@ -4,36 +4,46 @@
         </ion-avatar>
         <ion-label>Misstagram</ion-label>
       </ion-item>
-    <ion-card>
+    <ion-card class="publicaciones_card">
         <ion-card-content>
             <ion-grid>
                 <ion-row>
-                    <ion-col size="10"> 
+                    <ion-col size="1">
+                        <ion-back-button defaultHref="{{gotoback}}"></ion-back-button>
+                    </ion-col>
+                    <ion-col > 
                         <ion-item>
                         <ion-avatar slot="start" style="width:30% !important;height : 30% !important;max-width: 40px !important;max-height: 40px !important;">
-                            <img src="assets/images/5.png" />
+                            <img src="{{pfp}}" />
                           </ion-avatar>
-                          <ion-label>ID: {{pubdetail.id}}</ion-label>
+                          <ion-label class="usrnamelabel">ID: {{pubdetail.id}}</ion-label>
+                          <ion-label class="locationlabel"><ion-icon name="location-outline"></ion-icon>{{pubdetail.location}}</ion-label>
                         </ion-item>
                     </ion-col>
-                    <ion-col>
-                        <ion-button fill="translucent" id="trigger"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></ion-button>
-                        <ion-popover trigger="trigger"><ng-template><app-popovermenu [id_pub_edit]="aux1"></app-popovermenu></ng-template></ion-popover>
+                    <ion-col size="1.2" class="morebutton">
+                        <ion-button fill="translucent" id="trigger_{{pubdetail.id}}_{{from_pub_ajenas}}"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></ion-button>
+                        <ion-popover trigger="trigger_{{pubdetail.id}}_{{from_pub_ajenas}}"><ng-template><app-popovermenu not_modify="{{from_pub_ajenas}}" id_modify="{{pubdetail.id}}"></app-popovermenu></ng-template></ion-popover>
                     </ion-col>
                 </ion-row>
             </ion-grid>
             <ion-img src={{pubdetail.imagen}}></ion-img>
-            <ion-card-title>{{pubdetail.desc}}</ion-card-title>
-            <ion-grid>
+            <ion-card-title class="usrdesclabel">{{pubdetail.desc}}</ion-card-title>
+            <ion-grid *ngIf="from_pub_ajenas == 'true'">
                 <ion-row align="center">
-                    <ion-col align="center">
-                        <ion-icon name="heart-dislike"></ion-icon>
+                    <ion-col align="center" (click) = "like(pubdetail)" id="like_button">
+                        <ion-icon name="heart-dislike-outline"></ion-icon>
                         <p>Dislike</p>
                     </ion-col>
-                    <ion-col>
+                    <ion-col (click) = "comment()">
                         <ion-icon name="chatbubbles"></ion-icon>
-                        <p>Comment</p>                                        
+                        <p>Criticar</p>                                        
                     </ion-col>
+                </ion-row>
+                <ion-row *ngIf="comment_button" id="criticar_button">
+                    <ion-input placeholder="Describa porque odia a esta persona" [(ngModel)]="newcomment" required id="criticar_field"></ion-input>
+                    <ion-button (click) = "send()" id="send_button"><ion-icon name="send-sharp"></ion-icon></ion-button>
+                </ion-row>
+                <ion-row id="comments">
                 </ion-row>
             </ion-grid>
         </ion-card-content>

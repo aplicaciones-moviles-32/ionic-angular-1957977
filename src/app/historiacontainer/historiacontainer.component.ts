@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import { DbservService } from '../dbserv.service';
+import { getDatabase, onValue, ref, remove, set, update } from 'firebase/database';
+
 
 @Component({
   selector: 'app-historiacontainer',
@@ -9,11 +9,14 @@ import { DbservService } from '../dbserv.service';
 })
 export class HistoriacontainerComponent implements OnInit {
 
-  constructor(private http: HttpClient, private db: DbservService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.db.gethistoria().subscribe(res => {
-      this.historias=res;
+    const db = getDatabase();
+    const auxhiscontainer = ref(db, 'historias/');
+    onValue(auxhiscontainer, (aux) => {
+      this.historias = aux.val();
+      this.historias = Object.values(this.historias);
     });
   }
 

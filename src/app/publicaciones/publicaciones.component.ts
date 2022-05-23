@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, NgModule, OnInit } from '@angular/core';
-import { DbservService } from '../dbserv.service';
+import { getDatabase, onValue, ref, remove, set, update } from 'firebase/database';
+
 
 
 @Component({
@@ -10,10 +10,15 @@ import { DbservService } from '../dbserv.service';
 })
 export class PublicacionesComponent implements OnInit {
 
-  constructor(private http:HttpClient, private db:DbservService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.db.getpub().subscribe(res => {this.publicaciones=res;});
+    const db = getDatabase();
+    const auxpub = ref(db, 'user/publicaciones');
+    onValue(auxpub, (aux) => {
+      this.publicaciones = aux.val();
+      this.publicaciones = Object.values(this.publicaciones);
+    });
   }
 
 

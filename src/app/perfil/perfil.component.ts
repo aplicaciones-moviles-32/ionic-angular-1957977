@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { DbservService } from '../dbserv.service';
+import { getDatabase, onValue, ref, remove, set, update } from 'firebase/database';
+
 
 @Component({
   selector: 'app-perfil',
@@ -9,10 +9,14 @@ import { DbservService } from '../dbserv.service';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor(private http:HttpClient, private db:DbservService) {   }
+  constructor() {   }
 
   ngOnInit(): void {
-    this.db.getprofile().subscribe(res => {this.user=res;});
+    const db = getDatabase();
+    const auxuser = ref(db, 'user/');
+    onValue(auxuser, (aux) => {
+      this.user = aux.val();
+    });
   }
 
   @Input() newdesc: string = ""; 
@@ -27,7 +31,19 @@ export class PerfilComponent implements OnInit {
     };
 
     savedesc (): void {
+      let db = getDatabase();
       this.user.desc = this.newdesc;
+
+      update(ref(db, 'user/'),{
+        desc: this.newdesc,
+        followers: this.user.followers,
+        followings: this.user.followings,
+        imagen: this.user.imagen,
+        name: this.user.name,
+        numpost: this.user.numpost
+      });
+
+
       this.editon = false;
       this.newdesc="";
     }

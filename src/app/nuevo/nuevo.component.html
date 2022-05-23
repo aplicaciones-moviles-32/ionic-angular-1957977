@@ -7,27 +7,39 @@
             </ion-avatar>
             <ion-label>Misstagram</ion-label>
           </ion-item>
-
-        <form #form="ngForm" (ngSubmit)="onSubmit(form)" ngNativeValidate>
-          <ion-label class="label">Nueva Publicación</ion-label>
-          <ion-grid>
-            <ion-row>
-              <ion-col>Descripción de tu publicación</ion-col>
-            </ion-row>
-            <ion-row>
-            <ion-input placeholder="Ej: Soy muy feo, verdad? :((((( Denmen atencionmn" [(ngModel)]="newdesc" name="desc" required></ion-input>
-            </ion-row>
-            <ion-row>
-              <ion-col>Sube aquí tu foto:
-              <ion-button>Subir Foto</ion-button>
-              <img class="temp_pic" src="assets/images/5.png" />
-              <ion-label>En Misstagram nos estremecemos por tí</ion-label>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-          <ion-button type="submit">Subir Publicación</ion-button>
-        </form>
-
+          <ion-card class="card">
+            <ion-card-header class="firsttext">Nueva Publicacion</ion-card-header>
+            <ion-card-content>
+              <form #form="ngForm" (ngSubmit)="onSubmit(form)" ngNativeValidate>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col class="secondtext">Descripción de tu publicación</ion-col>
+                  </ion-row>
+                  <ion-row class="inputbox">
+                  <ion-input class="input" placeholder="Ej: Soy muy feo, verdad? :(((((" [(ngModel)]="newdesc" name="desc" required></ion-input>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col class="thirdtext" size="4">Toma o sube aquí tu foto:</ion-col>
+                    <ion-col class="ion-align-self-center"><ion-button (click)="Tomar_Foto()" class="ion-float-right">Tomar Foto</ion-button></ion-col>
+                  </ion-row>
+                  <div *ngIf="publicado" class="newpub">
+                    <ion-row *ngFor="let i of fotos.foto; index as position" >
+                      <ion-img [src]="i.data" class="temp_pic"></ion-img>
+                    </ion-row>
+                    <div class="locationlabel">
+                      <ion-label> Aquí en Misstagram te doxxeamos (o no) con cada publicación que hagas:  <ion-icon name="location-outline"></ion-icon>{{ubicacion}}</ion-label>
+                    </div>
+                  </div>
+                  <ion-row *ngIf="foto_check" class="boxbutton">
+                  </ion-row>
+                </ion-grid>
+                <ion-row class="subbox">
+                  <ion-button class="button" type="submit" *ngIf="foto_check">Subir Publicación</ion-button>
+                </ion-row>
+              </form>      
+            </ion-card-content>
+          </ion-card>
+        
     </ion-content>
 </ion-app>
 
