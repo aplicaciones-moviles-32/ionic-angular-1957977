@@ -1,3 +1,10 @@
+ion-img{
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 600px !important;
+}
+
 ion-card{
     display: flex !important;
     flex-direction: row !important;
@@ -8,16 +15,4 @@ ion-card{
     height: max-content !important;
     max-height: fit-content !important;
     transform: translateX(50%);
-  }
-
-  img {
-    width: 600px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-
-  .userpic{
-    transform: translateX(100%) !important;
   }

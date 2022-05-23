@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { DetallepubComponent } from './detallepub/detallepub.component';
+import { CommonModule } from '@angular/common';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { ImagenesComponent } from './imagenes/imagenes.component';
-import { NuevoComponent } from './nuevo/nuevo.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { DetallepubComponent } from './detallepub/detallepub.component';
+import { NuevoComponent } from './nuevo/nuevo.component';
 
 const routes: Routes = [
   {
@@ -19,13 +20,16 @@ const routes: Routes = [
     component: DetallepubComponent
   },
   {
-    path: "nuevo",
+    path: 'nuevo/',
     component: NuevoComponent
   }
-];
+]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  declarations: [],
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class RoutesModule { }

@@ -1,0 +1,7 @@
+.historias {
+    width: 900px;
+    overflow-x: scroll !important;
+    transform: translateX(56%);
+}
+
+

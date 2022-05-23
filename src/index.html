@@ -3,14 +3,39 @@
 <head>
   <meta charset="utf-8">
   <title>IonicAngular1957977</title>
+  <ion-item>
+    <ion-avatar slot="end">
+      <img src="assets/images/5.png" id="usrpic"/>
+      <ion-popover trigger="usrpic">
+        <ng-template>
+          <ion-list>
+              <ion-item><ion-label>@Cringepedia</ion-label></ion-item>
+            <ion-item>
+                <ion-icon name="exit"></ion-icon>
+                <ion-label color="danger">Cerrar Sesión</ion-label>
+            </ion-item>
+        </ion-list>
+        </ng-template>
+      </ion-popover>
+    </ion-avatar>
+    <ion-label>Misstagram</ion-label>
+    <ion-button fill="transparent" id="notifications"><ion-icon name="notifications-outline"></ion-icon></ion-button>
+    <ion-popover trigger="notifications">
+      <ng-template>
+        <ion-list>
+          <ion-icon name="alert"></ion-icon>
+          <ion-label color="danger">Tienes una notifición sin leer!:</ion-label>
+          <ion-label>@mexicanpresidents te ha reportado por acoso</ion-label>
+          </ion-item>
+      </ion-list>
+      </ng-template>
+    </ion-popover>
+  </ion-item>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <h1>Angular!!</h1>
   <app-root></app-root>
-  
-  
 </body>
 </html>

@@ -1,0 +1,33 @@
+
+<ion-app>
+    <ion-content>
+        <ion-item>
+            <ion-avatar slot="end">
+              <img src="assets/images/5.png" />
+            </ion-avatar>
+            <ion-label>Misstagram</ion-label>
+          </ion-item>
+
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" ngNativeValidate>
+          <ion-label class="label">Nueva Publicación</ion-label>
+          <ion-grid>
+            <ion-row>
+              <ion-col>Descripción de tu publicación</ion-col>
+            </ion-row>
+            <ion-row>
+            <ion-input placeholder="Ej: Soy muy feo, verdad? :((((( Denmen atencionmn" [(ngModel)]="newdesc" name="desc" required></ion-input>
+            </ion-row>
+            <ion-row>
+              <ion-col>Sube aquí tu foto:
+              <ion-button>Subir Foto</ion-button>
+              <img class="temp_pic" src="assets/images/5.png" />
+              <ion-label>En Misstagram nos estremecemos por tí</ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-button type="submit">Subir Publicación</ion-button>
+        </form>
+
+    </ion-content>
+</ion-app>
+

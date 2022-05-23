@@ -4,13 +4,26 @@ p {
 }
 
 h1{
+    text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: "400px";
-    color: wheat;
+    color: black;
 }
 
 ion-card-content{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     font-size: large;
+}
+
+#homegif{
+    width: max-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ion-header{
+    background-color: white;
+    font-size: 20px;
 }
