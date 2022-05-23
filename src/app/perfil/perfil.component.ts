@@ -31,7 +31,19 @@ export class PerfilComponent implements OnInit {
     };
 
     savedesc (): void {
+      let db = getDatabase();
       this.user.desc = this.newdesc;
+
+      update(ref(db, 'user/'),{
+        desc: this.newdesc,
+        followers: this.user.followers,
+        followings: this.user.followings,
+        imagen: this.user.imagen,
+        name: this.user.name,
+        numpost: this.user.numpost
+      });
+
+
       this.editon = false;
       this.newdesc="";
     }

@@ -1,13 +1,11 @@
-ion-card{
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 50% !important;
-    margin: 20 !important;
-    height: max-content !important;
-    max-height: fit-content !important;
-    transform: translateX(50%);
+.publicaciones_card{
+    max-width: fit-content !important;
+    min-width: 340px !important;
+    width: max-content !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    object-fit: cover !important;
   }
 
   img {
@@ -20,4 +18,17 @@ ion-card{
 
   .userpic{
     transform: translateX(100%) !important;
+  }
+
+  .usrnamelabel{
+    font-size: clamp(12px, 3vw, 15px) !important;
+  }
+
+  .usrdesclabel{
+    font-size: clamp(20px, 4vw, 25px) !important;
+  }
+
+  .morebutton{
+    margin-left: auto !important; 
+    margin-right: 15px !important;
   }

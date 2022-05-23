@@ -8,41 +8,48 @@
                 <ion-label>Misstagram</ion-label>
               </ion-item>
         <ion-grid style="height: 100%">
-            <ion-row><app-historiacontainer></app-historiacontainer></ion-row>
             <ion-row>
                 <ion-col>
                     <div *ngFor="let i of presidentes">
-                    <ion-card *ngIf="card_validation(i)"> 
+                    <ion-card *ngIf="card_validation(i)" class="publicaciones_card"> 
                         <ion-card-content>
                                 <ion-grid>
                                     <ion-row>
-                                        <ion-col [routerLink]="['/detallepub',true,i.id]" routerLinkActive="active" size="10">
+                                        <ion-col [routerLink]="['/detallepub',true,i.id]" routerLinkActive="active">
                                             <ion-item>
                                             <ion-avatar slot="start" style="width:30% !important;height : 30% !important;max-width: 40px !important;max-height: 40px !important;">
-                                                <img src="assets/images/5.png" />
+                                                <img src="https://imgs.search.brave.com/dCzoEOLiMzdADO510Id2OKHfs9DNNWMG_IeamH7m1Zw/rs:fit:585:618:1/g:ce/aHR0cHM6Ly9jZG4u/ZWxkZWZvcm1hLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MS8wMS8xMzIyMDM3/MDRfOTAzNzU3NTcz/Nzg3MTU3XzM1Nzky/ODkyMjgxNjA2MTI0/MTdfbi01ODV4NjE4/LmpwZw" />
                                               </ion-avatar>
-                                              <ion-label>@mexicanpresidents</ion-label>
-                                              <p>ID: {{i.id}}</p>
+                                              <ion-label class="usrnamelabel">@mexicanpresidents</ion-label>
+                                              <p class="usrnamelabel">ID: {{i.id}}</p>
                                             </ion-item>
                                         </ion-col>
-                                        <ion-col>
+                                        <ion-col size="1.2" class="morebutton">
                                             <ion-button fill="translucent" id="trigger_{{i.id}}" class="trigger"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></ion-button>
                                             <ion-popover trigger="trigger_{{i.id}}"><ng-template><app-popovermenu not_modify="true" id_modify="-1"></app-popovermenu></ng-template></ion-popover>
                                         </ion-col>
                                     </ion-row>
                                 </ion-grid>
                             <img src={{i.imagen}} [routerLink]="['/detallepub',true,i.id]" routerLinkActive="active"/>
-                            <ion-card-title [routerLink]="['/detallepub',true,i.id]" routerLinkActive="active">{{i.desc}}</ion-card-title>
+                            <ion-card-title [routerLink]="['/detallepub',true,i.id]" routerLinkActive="active" class="usrdesclabel">{{i.desc}}</ion-card-title>
                             <ion-grid>
                                 <ion-row align="center" style="height: 100%">
-                                    <ion-col align="center">
-                                        <ion-icon name="heart-dislike"></ion-icon>
+                                    <ion-col align="center" (click) = "like(i)" id="like_button_{{i.id}}">
+                                        <ion-icon name="heart-dislike-outline"></ion-icon>
                                         <p>Dislike</p>
                                     </ion-col>
-                                    <ion-col>
+                                    <ion-col (click) = "comment()">
                                         <ion-icon name="chatbubbles"></ion-icon>
-                                        <p>Comment</p>                                        
+                                        <p>Criticar</p>                                        
                                     </ion-col>
+                                </ion-row>
+                                <ion-row *ngIf="comment_button" id="criticar_button_{{i.id}}">
+                                    <ion-input placeholder="Describa porque odia a esta persona" [(ngModel)]="newcomment" required id="criticar_field_{{i.id}}"></ion-input>
+                                    <ion-button (click) = "send(i)" id="send_button_{{i.id}}"><ion-icon name="send-sharp"></ion-icon></ion-button>
+                                </ion-row>
+                                <ion-row >
+                                    <div id="comments_{{i.id}}">
+                                    </div>
                                 </ion-row>
                             </ion-grid>
                         </ion-card-content>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Misstagram</string>
+    <string name="title_activity_main">Misstagram</string>
+    <string name="package_name">com.misstagram.app</string>
+    <string name="custom_url_scheme">com.misstagram.app</string>
+</resources>

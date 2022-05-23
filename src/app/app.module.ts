@@ -21,6 +21,10 @@ import { initializeApp } from 'firebase/app';
 import { provideFirebaseApp } from '@angular/fire/app';
 import { HttpClientModule} from '@angular/common/http';
 import { PhotoServicioService } from './photo-servicio.service';
+import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
+
+
+initializeApp(environment.firebaseConfig);
 
 @NgModule({
   declarations: [
@@ -33,7 +37,8 @@ import { PhotoServicioService } from './photo-servicio.service';
     PopovermenuComponent,
     HistoriasComponent,
     HistoriacontainerComponent,
-    NuevoComponent
+    NuevoComponent,
+    InicioSesionComponent
   ],
   imports: [
     BrowserModule,
@@ -43,8 +48,7 @@ import { PhotoServicioService } from './photo-servicio.service';
     RoutesModule,
     HttpClientModule,
     RouterModule,
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideDatabase(()=>getDatabase())],
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),provideDatabase(()=>getDatabase())],
   providers: [PhotoServicioService],
   bootstrap: [AppComponent],
   exports:[RoutesModule]

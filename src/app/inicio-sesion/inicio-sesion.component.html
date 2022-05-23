@@ -1,0 +1,136 @@
+
+
+
+
+
+<ion-header *ngIf="!sesion_iniciada">
+    <ion-item>
+      <ion-label>Misstagram</ion-label>
+      <ion-label  style="opacity: 50%;" slot="end">Inicia sesión</ion-label>
+    </ion-item>
+</ion-header>
+
+<ion-item *ngIf="sesion_iniciada">
+    <ion-avatar slot="end">
+      <img src="{{user.imagen}}" id="usrpic"/>
+      <ion-popover id="popover" trigger="usrpic">
+        <ng-template>
+          <ion-list>
+              <ion-item><ion-label>@{{user.name}}</ion-label></ion-item>
+              <ion-item (click)="trig_settings()">
+                <ion-icon name="settings-outline"></ion-icon>
+                <ion-label >Configuración</ion-label>
+              </ion-item>
+
+              <ion-item *ngIf="settings" (click)="trig_chngpfp()">
+                <ion-icon name="camera-outline"></ion-icon>
+                <ion-label>Cambiar Foto de perfil</ion-label>
+              </ion-item>
+
+              <ion-item *ngIf="settings && editando_pfp">
+                <ion-button (click)="tomar_foto()">Tomar foto</ion-button>
+                <ion-button slot="end" *ngIf="settings && editando_pfp && foto_check" (click)="save_pfp()"><ion-icon name="checkmark-outline"></ion-icon></ion-button>
+              </ion-item>
+            
+
+              <ion-item *ngIf="settings" (click)="trig_chngname()">
+                <ion-icon name="person-outline"></ion-icon>
+                <ion-label>Cambiar Username</ion-label>
+              </ion-item>
+
+              <ion-item *ngIf="settings && editando_name">
+                <ion-input placeholder="Nuevo Username" [(ngModel)]="new_name"></ion-input>
+              </ion-item>
+              <ion-item *ngIf="settings && editando_name">
+                <ion-button (click)="chng_name()">Guardar username</ion-button>
+              </ion-item>
+
+
+              <ion-item *ngIf="settings" (click)="trig_chngpass()">
+                <ion-icon name="key-outline"></ion-icon>
+                <ion-label>Cambiar contraseña</ion-label>
+              </ion-item>
+
+                  <ion-item *ngIf="settings && editando_pass">
+                    <ion-input type="password" placeholder="Antigua contraseña" [(ngModel)]="old_pass"></ion-input>
+                  </ion-item>
+                  <ion-item *ngIf="settings && editando_pass">
+                    <ion-input type="password" placeholder="Nueva contraseña" [(ngModel)]="new_pass"></ion-input>
+                  </ion-item>
+                  <ion-item *ngIf="settings && editando_pass">
+                    <ion-input type="password" placeholder="Confirma nueva contraseña" [(ngModel)]="new_rep_pass"></ion-input>
+                  </ion-item>
+                  <ion-item *ngIf="settings && editando_pass">
+                    <ion-button (click)="chng_pass()">Guardar contraseña</ion-button>
+                  </ion-item>
+
+
+            <ion-item>
+                <ion-icon name="exit"></ion-icon>
+                <ion-label color="danger" (click)="close_button()">Cerrar Sesión</ion-label>
+            </ion-item>
+          </ion-list>
+        </ng-template>
+      </ion-popover>
+    </ion-avatar>
+    <ion-label>Misstagram</ion-label>
+    <ion-button fill="transparent" id="notifications"><ion-icon name="notifications-outline"></ion-icon></ion-button>
+    <ion-popover trigger="notifications">
+      <ng-template>
+        <ion-list>
+          <ion-icon name="alert"></ion-icon>
+          <ion-label color="danger">Tienes una notifición sin leer!:</ion-label>
+          <ion-label>@mexicanpresidents te ha reportado por acoso</ion-label>
+        </ion-list>
+      </ng-template>
+    </ion-popover>
+  </ion-item>
+
+
+<ion-app>
+  <ion-content>
+    <ion-header>Misstagram</ion-header>
+
+    <div class="welcomebox">
+      <h1 class="welcometext">Te damos la bienvenida a Misstagram!!</h1>
+    </div>
+
+    <div class="secondbox">
+      <h2 class="secondtext">Un lugar dónde criticamos a otras personas, incluyéndote!!</h2>
+    </div>
+
+    <div class="homebox">
+      <img class="homegif" src="https://media1.giphy.com/media/hQKiGV6MG8WmsHg2yx/giphy.gif?cid=ecf05e476u03vsxqyttc34n03k2bsvw1xo0b2x3lfg0rwpqe&rid=giphy.gif&ct=g" />
+    </div>
+
+    <div>
+      <h2 align="center" class="thirdtext">Ingresa tu usuario y contraseña</h2>
+    </div>
+
+    <div class="form">
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)" ngNativeValidate *ngIf="!sesion_iniciada">
+          <ion-grid>
+              <ion-row>
+                  <ion-input placeholder="Escribe tu usuario" [(ngModel)]="inputuser" name="user" required>@</ion-input>
+              </ion-row>
+              <ion-row>
+                  <ion-input type="password" placeholder="Escribe tu contraseña" [(ngModel)]="inputpass" name="pass" required></ion-input>
+              </ion-row>
+              <ion-row>
+                  <ion-button type="submit">Iniciar sesion</ion-button>
+              </ion-row>
+          </ion-grid>
+      </form> 
+    </div>
+
+  </ion-content>
+</ion-app>
+
+<div *ngIf="sesion_iniciada">
+    <app-tabs></app-tabs>
+</div>
+
+
+
+        
+

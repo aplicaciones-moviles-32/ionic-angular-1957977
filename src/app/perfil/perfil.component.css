@@ -6,10 +6,27 @@ a{
 
 
 #username{
-    font-size: 30px;
-};
+    font-size: clamp(25px, 5vw, 40px) !important;
+}
 
 .userinput{
-    border: 10px solid gray !important;
-};
+    border: 2px solid black !important;
+}
+
+
+
+.editbutton{
+    position:  relative !important;
+    max-width: max-content !important;
+    min-width: 15px !important;
+    margin: auto !important;
+}
+
+.userimg{
+    object-fit: cover !important;
+    transform: translate(0px, 10px);
+}
+
+
+
 

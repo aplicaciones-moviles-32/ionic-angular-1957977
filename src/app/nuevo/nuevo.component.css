@@ -1,12 +1,72 @@
 .temp_pic{
-    width: 400px !important;
-    max-width: 500px !important;
+    width: fit-content !important;
+    max-width: 350px !important;
     display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-bottom: 40px;
+}
+
+
+.firsttext{
+    font-size: clamp(30px, 4vw, 45px) !important;
+    font-weight: bold !important;
+}
+
+.secondtext{
+    font-size: clamp(15px, 4vw, 30px) !important;
+}
+
+ion-input{
+    border-radius: 15px !important;
+    border: 1px solid #f1f1f1 !important;
+    min-width: 85vw;
+    max-width: fit-content;
+    height: 10vw;
+    min-height: 170px !important;
+    display: block !important;
+    width: 10vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}  
+
+.inputbox{
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+
+.thirdtext{
+    font-size: clamp(15px, 2vw, 20px) !important;
+    font-weight: 500;
+}
+
+.newpub{
+    padding-top: 30px;
+}
+
+.locationlabel{
+    text-align: center !important;
+    font-size: clamp(15px, 3vw, 20px) !important;
+}
+
+.button{
     margin-left: auto !important;
     margin-right: auto !important;
 }
 
-.label{
-    font-size: 30px;
-    font-weight: bold;
+ion-card{
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.picbutton{
+        vertical-align: middle !important;
+        align-content: center !important;
+        margin-right: 0px !important;
+}
+
+.subbox{
+    align-content: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }

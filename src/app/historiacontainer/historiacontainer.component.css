@@ -1,7 +1,14 @@
 .historias {
-    width: 900px;
     overflow-x: scroll !important;
-    transform: translateX(56%);
+    object-fit: cover !important;
 }
 
 
+.container{
+    margin: auto;
+    width: max-content !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    object-fit: cover !important;
+}

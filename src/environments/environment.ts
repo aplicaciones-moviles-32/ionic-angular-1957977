@@ -4,11 +4,12 @@
 
 
 import { initializeApp } from "firebase/app";
+import { getDatabase, ref, onValue } from "firebase/database";
 
 
 
 export const environment = {
-  production: false,
+  production: true,
   firebaseConfig: {
     apiKey: "AIzaSyAu22iQTpvYQFOr6NRDAh7uMbyqG2-pBmU",
     authDomain: "misstagram-a8c5e.firebaseapp.com",

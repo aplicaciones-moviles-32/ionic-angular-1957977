@@ -8,22 +8,22 @@
           </ion-item>
         <ion-grid style="height: 100%">
             <ion-row >
-                <ion-col><div class="userimg">
-                    <ion-avatar style="width:100% !important;height : 100% !important;max-width: 100px !important;max-height: 100px !important;">
-                    <img [src]="user.imagen"/>
-                    </ion-avatar>
-                </div></ion-col>
-                <ion-col>
-                    <p><strong>{{user.numpost}}</strong></p>
-                    <p><strong># de Publicaciones</strong></p>
+                <ion-col size="auto">    
+                    <div>
+                        <ion-avatar><img [src]="user.imagen" class="userimg"></ion-avatar>
+                    </div>
                 </ion-col>
                 <ion-col>
-                    <p><strong>{{user.followers}}</strong></p>
-                    <p><strong>Seguidores</strong></p>
+                    <p style="font-size: clamp(14px, 3vw, 15px) !important;"><strong>{{user.numpost}}</strong></p>
+                    <p style="font-size: clamp(14px, 3vw, 15px) !important;"><strong>Publicaciones</strong></p>    
                 </ion-col>
                 <ion-col>
-                    <p><strong>{{user.followings}}</strong></p>
-                    <p><strong>Seguidos</strong></p>
+                    <p style="font-size: clamp(14px, 3vw, 15px) !important;"><strong>{{user.followers}}</strong></p>
+                    <p style="font-size: clamp(14px, 3vw, 15px) !important;"><strong>Seguidores</strong></p>
+                </ion-col>
+                <ion-col>
+                    <p style="font-size: clamp(14px, 3vw, 15px) !important;"><strong>{{user.followings}}</strong></p>
+                    <p style="font-size: clamp(14px, 3vw, 15px) !important;"><strong>Seguidos</strong></p>
                 </ion-col>
             </ion-row>
             <ion-row>
@@ -31,15 +31,13 @@
             </ion-row>
             <ion-row>
                 <ion-col><a><strong>{{user.desc}}</strong></a></ion-col>
+                <ion-button (click)="editbutton()" class="editbutton"><ion-icon name="create-outline"></ion-icon></ion-button>
             </ion-row>
-            <ion-row>
-                <ion-col size="1.5"><ion-button (click)="editbutton()">Cambiar descripción</ion-button></ion-col>
-                <ion-col *ngIf="editon">
+                <ion-row *ngIf="editon">
                     <ion-input [(ngModel)]="newdesc" class="userinput"></ion-input>
-                    <ion-button (click)="savedesc()">Guardar</ion-button>
-                    <ion-button (click)="canceldesc()">Cancelar</ion-button>
-                </ion-col>
-            </ion-row>
+                    <ion-button (click)="savedesc()" class="button"><ion-icon name="checkmark-outline"></ion-icon></ion-button>
+                    <ion-button (click)="canceldesc()" class="button"><ion-icon name="close-outline"></ion-icon></ion-button>
+                </ion-row>
             <ion-row>
                 <app-publicaciones></app-publicaciones>
             </ion-row>

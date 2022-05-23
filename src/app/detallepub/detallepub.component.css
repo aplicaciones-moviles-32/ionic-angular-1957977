@@ -2,17 +2,36 @@ ion-img{
     display: block !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    width: 600px !important;
+    max-width: max-content !important;
 }
 
-ion-card{
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 50% !important;
-    margin: 20 !important;
-    height: max-content !important;
-    max-height: fit-content !important;
-    transform: translateX(50%);
+.publicaciones_card{
+    max-width: fit-content !important;
+    min-width: 340px !important;
+    width: max-content !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    object-fit: cover !important;
   }
+
+  .usrnamelabel{
+    font-size: clamp(12px, 3vw, 15px) !important;
+  }
+
+  .usrdesclabel{
+    font-size: clamp(20px, 4vw, 25px) !important;
+  }
+
+  .morebutton{
+    margin-left: auto !important; 
+    margin-right: 0 !important;
+  }
+
+  .locationlabel{
+    font-size: clamp(10px, 3vw, 13px) !important;
+    font-weight: 100 !important;
+    text-align: right !important;
+    opacity: 50% !important;
+  }
+
